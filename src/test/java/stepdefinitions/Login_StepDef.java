@@ -25,31 +25,32 @@ public class Login_StepDef {
 		Assert.assertEquals(actResult, expResult);
 	}
 
-	@When("the user enters a invalid phone number")
-	public void the_user_enters_a_invalid_phone_number() {
-	    loginPage = new LoginPage(driver, extTest);
-	    loginPage.clickLogin();
-	    loginPage.enterMobileNumber("5763394");
-	    loginPage.clickContinue();
-	}
-
-	@Then("an invalid number message should be shown")
-	public void an_invalid_number_message_should_be_shown() {
-	    boolean actualError = loginPage.getNumErrorMessage();
-	    Assert.assertTrue(actualError);
-	}
-
-
-	@When("the user enters a valid phone number")
-	public void the_user_enters_a_valid_phone_number() {
+	// scenario--1
+	@When("the user enters a invalid phone number {string}")
+	public void the_user_enters_a_invalid_phone_number(String phoneNumber) {
 		loginPage = new LoginPage(driver, extTest);
 		loginPage.clickLogin();
-		loginPage.enterMobileNumber("8015888674");  
+		loginPage.enterMobileNumber(phoneNumber);
+		loginPage.clickContinue();
 	}
 	
-	@When("the user enters the invalid OTP")
-	public void the_user_enters_the_invalid_otp() {
-		loginPage.enterOtp("573852");
+	@Then("an invalid number message should be shown")
+	public void an_invalid_number_message_should_be_shown() {
+		boolean actualError = loginPage.getNumErrorMessage();
+        Assert.assertTrue(actualError);
+	}
+	
+	// scenario--2
+	@When("the user enters a valid phone number {string}")
+	public void the_user_enters_a_valid_phone_number(String phoneNumber) {
+		loginPage = new LoginPage(driver, extTest);
+		loginPage.clickLogin();
+		loginPage.enterMobileNumber(phoneNumber);  
+	}
+	
+	@When("the user enters the invalid OTP {string}")
+	public void the_user_enters_the_invalid_otp(String otp) {
+		loginPage.enterOtp(otp);
 		loginPage.clickContinue();
 	}
 	
@@ -59,6 +60,12 @@ public class Login_StepDef {
         Assert.assertTrue(actualError);
 	}
 
+	// scenario--3
+	@When("waits until the OTP expires and clicks on resend button")
+	public void waits_until_the_otp_expires_and_clicks_on_resend_button() {
+	    loginPage.clickResendOtp();
+	}
+	
 	@When("the user enters the valid OTP")
 	public void the_user_enters_the_valid_otp() {
 		loginPage.enterOtpManually(driver); 
@@ -67,10 +74,11 @@ public class Login_StepDef {
 		Base.sleep();
 	}
 
+	// scenario--4
 	@Then("the user should be logged in successfully")
 	public void the_user_should_be_logged_in_successfully() {
-	    Assert.assertTrue(loginPage.loginsuccessful(), "Login failed! User not redirected properly.");
+		boolean actualError = loginPage.loginsuccessful();
+        Assert.assertTrue(actualError);
 	}
-
 	
 }

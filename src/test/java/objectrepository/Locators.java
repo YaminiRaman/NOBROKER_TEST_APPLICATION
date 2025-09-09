@@ -12,11 +12,9 @@ public class Locators {
 	public static By resendOtpButton=By.xpath("//div[contains(@class,'nb__G_7wy') and text()='Resend OTP']");
 	
 			
-		// Home page locators
-		public static By searchCity    = By.id("searchCity");
-		public static By searchLocality = By.id("listPageSearchLocality");
-		public static By searchButton   = By.xpath("//button[@type='button' and contains(@class,'prop-search-button')]");
-		public static By historySection = By.cssSelector("div.QuickBook_autoSearchPopover__g1zGj");
-		public static By historyItems   = By.cssSelector("div.QuickBook_autoSearchPopover__g1zGj div");
-
-	}
+	public static By searchCity=By.id("searchCity");
+	public static By searchLocality=By.id("listPageSearchLocality");
+	public static By searchButton=By.xpath("//button[@type='button' and contains(@class,'prop-search-button')]");
+	public static By historySection = By.cssSelector("div.QuickBook_autoSearchPopover__g1zGj"); 
+	public static By historyItems   = By.cssSelector("div.QuickBook_autoSearchPopover__g1zGj div");
+}

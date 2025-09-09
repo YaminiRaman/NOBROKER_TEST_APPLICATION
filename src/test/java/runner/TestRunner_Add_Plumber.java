@@ -12,8 +12,9 @@ import io.cucumber.testng.CucumberOptions;
                 "json:target/cucumber-reports/cucumber.json", // JSON report
                 "junit:target/cucumber-reports/cucumber.xml"  // JUnit report
         },
-        monochrome = true,                           // clean console output
-        tags = "@addService"                         // run only scenarios with this tag
-)
+        monochrome = true    
+        )// clean console output
+                             // run only scenarios with this tag
+
 public class TestRunner_Add_Plumber extends AbstractTestNGCucumberTests {
 }

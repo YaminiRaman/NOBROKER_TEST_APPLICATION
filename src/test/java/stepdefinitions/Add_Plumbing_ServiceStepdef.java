@@ -1,6 +1,12 @@
 package stepdefinitions;
 
+import java.time.Duration;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import io.cucumber.java.en.Given;
@@ -27,27 +33,21 @@ public class Add_Plumbing_ServiceStepdef {
         loginPage.clickContinue();
 
         Assert.assertTrue(loginPage.loginsuccessful(), "Login failed!");
+        System.out.println("✅ User logged in successfully");
     }
 
     @Given("the user navigates to plumbing services page for booking")
     public void the_user_navigates_to_plumbing_services_page_for_booking() {
         addServicePage = new Add_Plumbing_ServicePage(driver);
         addServicePage.navigateToPlumbingServicesForBooking();
+        System.out.println("✅ Navigated to plumbing services page");
     }
 
-    @When("the user selects a plumbing service and clicks add")
-    public void the_user_selects_a_plumbing_service_and_clicks_add() {
-        addServicePage.clickAddButtonMultipleTimes("Book a Plumber", 2);
+    @When("the user clicks {string}")
+    public void the_user_clicks_book_a_plumber(String buttonName) {
+        addServicePage.selectBookAPlumber();
+        System.out.println("✅ Clicked '" + buttonName + "'");
     }
 
-
-
-
-    @Then("the selected plumbing service should be added successfully with quantity {int}")
-    public void the_selected_plumbing_service_should_be_added_successfully_with_quantity(Integer quantity) {
-        Assert.assertTrue(
-            addServicePage.isServiceAddedSuccessfully(quantity),
-            "Plumbing service was not added successfully with quantity " + quantity + "!"
-        );
-    }
+ 
 }

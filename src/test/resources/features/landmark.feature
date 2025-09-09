@@ -21,3 +21,19 @@ Feature: Home Page Search and Navigation
     Examples:
       | location |
       | Mumbai   |
+
+ 
+      
+  @home
+  Scenario: View previous searches after new search
+   Given the user selects location "<location>"
+    And enters landmark "<landmark>"
+    And clicks on search button
+    Then the user should be redirected to the Rent Page
+    And the user returns to the home page
+    Then the previous search "<location>" "<landmark>" should appear in search history
+    
+   Examples:
+      | location | landmark  |
+      | Chennai  | Velachery |
+      

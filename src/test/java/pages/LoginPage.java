@@ -38,12 +38,17 @@ public class LoginPage {
         }
     }
 
-    public void enterMobileNumber(String phoneNumber) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement phoneInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("signUp-phoneNumber")));
-        phoneInput.clear();
-        phoneInput.sendKeys(phoneNumber);
+    public void enterMobileNumber(String mobile) {
+        try {
+            driver.findElement(Locators.inputNumber).sendKeys(mobile);
+            extTest.log(Status.PASS, "Entered mobile number: " + mobile);
+        }
+        catch (Exception e) {
+            extTest.log(Status.FAIL, "Failed to enter mobile number: " + e.getMessage());
+            throw e;
+        }
     }
+
     public void clickContinue() {
         try {
             driver.findElement(Locators.continueButton).click();
@@ -78,7 +83,6 @@ public class LoginPage {
             otpBox.sendKeys(otp);
 
             extTest.log(Status.PASS, "Manually entered OTP: " + otp);
-            sc.close();
         }
         catch (Exception e) {
             extTest.log(Status.FAIL, "Failed to enter OTP manually: " + e.getMessage());
