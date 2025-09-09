@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="26.106" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="Plumbing Service Navigation" name="User navigates to a plumbing service" time="25.254">
+<testsuite name="Cucumber" time="25.037" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Plumbing Service Navigation" name="User navigates to a plumbing service" time="24.361">
 <system-out><![CDATA[
 Given the user logs in with a valid mobile number and OTP for booking.......passed
 And the user navigates to plumbing services page for booking................passed

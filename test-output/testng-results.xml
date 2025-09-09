@@ -2,46 +2,46 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-09T11:40:48 IST" name="Default suite" finished-at="2025-09-09T11:41:14 IST" duration-ms="26691">
+  <suite started-at="2025-09-09T14:40:47 IST" name="Default suite" finished-at="2025-09-09T14:41:18 IST" duration-ms="30558">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner_Add_Plumber@3d34d211]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner_Show_More_Plumbing@3d34d211]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-09-09T11:40:48 IST" name="Default test" finished-at="2025-09-09T11:41:14 IST" duration-ms="26691">
-      <class name="runner.TestRunner_Add_Plumber">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.TestRunner_Add_Plumber@3d34d211]" started-at="2025-09-09T11:40:48 IST" name="setUpClass" finished-at="2025-09-09T11:40:48 IST" duration-ms="707" status="PASS">
+    <test started-at="2025-09-09T14:40:47 IST" name="Default test" finished-at="2025-09-09T14:41:18 IST" duration-ms="30558">
+      <class name="runner.TestRunner_Show_More_Plumbing">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.TestRunner_Show_More_Plumbing@3d34d211]" started-at="2025-09-09T14:40:47 IST" name="setUpClass" finished-at="2025-09-09T14:40:48 IST" duration-ms="755" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@b3e86d5]]>
+                <![CDATA[org.testng.TestRunner@f613067]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner_Add_Plumber@3d34d211]" started-at="2025-09-09T11:40:49 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-09-09T11:41:14 IST" duration-ms="25432" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner_Show_More_Plumbing@3d34d211]" started-at="2025-09-09T14:40:48 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-09-09T14:41:14 IST" duration-ms="26373" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["User navigates to a plumbing service"]]>
+                <![CDATA["User views and expands multiple plumbing service categories"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Plumbing Service Navigation"]]>
+                <![CDATA["Explore Plumbing Service Options"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestRunner_Add_Plumber@3d34d211]" started-at="2025-09-09T11:41:14 IST" name="tearDownClass" finished-at="2025-09-09T11:41:14 IST" duration-ms="386" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestRunner_Show_More_Plumbing@3d34d211]" started-at="2025-09-09T14:41:14 IST" name="tearDownClass" finished-at="2025-09-09T14:41:18 IST" duration-ms="3366" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- runner.TestRunner_Add_Plumber -->
+      </class> <!-- runner.TestRunner_Show_More_Plumbing -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

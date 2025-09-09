@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="27.243" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Explore Plumbing Service Options" name="User views and expands multiple plumbing service categories" time="26.279">
+<system-out><![CDATA[
+Given the user logs in successfully with valid credentials..................passed
+And the user navigates to the plumbing services section.....................passed
+When the user scrolls through the available plumbing services...............passed
+And the user clicks on "Show More" for a selected service...................passed
+Then the service description and pricing details should be displayed........passed
+]]></system-out>
+</testcase>
+</testsuite>
