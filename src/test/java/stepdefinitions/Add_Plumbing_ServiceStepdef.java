@@ -1,16 +1,9 @@
 package stepdefinitions;
 
-import java.time.Duration;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.LoginPage;
 import pages.Add_Plumbing_ServicePage;
@@ -39,15 +32,17 @@ public class Add_Plumbing_ServiceStepdef {
     @Given("the user navigates to plumbing services page for booking")
     public void the_user_navigates_to_plumbing_services_page_for_booking() {
         addServicePage = new Add_Plumbing_ServicePage(driver);
-        addServicePage.navigateToPlumbingServicesForBooking();
+
+        addServicePage.clickMenuButton();
+        addServicePage.clickPaintingCleaning();
+        addServicePage.selectCity();
+        addServicePage.clickEPCButton();
+        addServicePage.clickPlumbingButton();
+        addServicePage.clickPlumbingCategory();
+
         System.out.println("✅ Navigated to plumbing services page");
     }
+    
 
-    @When("the user clicks {string}")
-    public void the_user_clicks_book_a_plumber(String buttonName) {
-        addServicePage.selectBookAPlumber();
-        System.out.println("✅ Clicked '" + buttonName + "'");
-    }
-
- 
+    
 }

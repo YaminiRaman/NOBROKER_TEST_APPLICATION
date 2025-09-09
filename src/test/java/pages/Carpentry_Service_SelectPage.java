@@ -1,21 +1,15 @@
 package pages;
 
 import java.time.Duration;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Add_Plumbing_ServicePage {
-
+public class Carpentry_Service_SelectPage {
     WebDriver driver;
     WebDriverWait wait;
 
-    // Constructor
-    public Add_Plumbing_ServicePage(WebDriver driver) {
+    public Carpentry_Service_SelectPage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
@@ -26,25 +20,23 @@ public class Add_Plumbing_ServicePage {
     private By chennaiImage = By.xpath("//*[@id='modalContent']/div[2]/div/div[3]/img");
     private By epcBtn1 = By.xpath("//*[@id='hs_plumbing']/div[1]/div[1]/div");
     private By epcBtn2 = By.xpath("//*[@id='hs_plumbing']/div[1]/div[2]");
-    private By plumbingBtn = By.xpath("//*[@id='app']/div/div/main/div/div/div[2]/div/div/div/div[1]/div[2]");
-    private By plumbingCategory = By.xpath("//*[@id='hs_plumbing']/div[1]/div[1]/div");
-    private By plumbingServicesDisplayed = By.xpath("//*[@id='app']/div/div/main/div/div/div[2]/div/div/div/div[1]/div[2]");
+    // ✅ More stable locator for carpentry (by visible text)
+    private By carpentryCategory = By.xpath("//div[contains(text(),'Carpentry')]");
+    private By firstCarpentryService = By.xpath("//*[@id='hs_carpentry']/div[1]/div[1]/div");
+    
 
-    // Step 1: Click Menu
+    // Actions
     public void clickMenuButton() {
-        WebElement menu = wait.until(ExpectedConditions.elementToBeClickable(menuBtn));
-        menu.click();
+        wait.until(ExpectedConditions.elementToBeClickable(menuBtn)).click();
         System.out.println("✅ Menu button clicked.");
     }
 
-    // Step 2: Click Painting & Cleaning
     public void clickPaintingCleaning() {
         WebElement painting = wait.until(ExpectedConditions.elementToBeClickable(paintingCleaning));
         painting.click();
         System.out.println("✅ Painting & Cleaning clicked.");
     }
 
-    // Step 3: Select City from Modal
     public void selectCity() {
         try {
             WebDriverWait modalWait = new WebDriverWait(driver, Duration.ofSeconds(25));
@@ -66,17 +58,36 @@ public class Add_Plumbing_ServicePage {
         }
     }
 
-    public void clickPlumbingButton() {
-        wait.until(ExpectedConditions.elementToBeClickable(plumbingBtn)).click();
-        System.out.println("✅ Clicked Plumbing Button");
+    public void clickCarpentryCategory() {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+
+            // Scroll until element is visible
+            WebElement carpentryCategory = wait.until(ExpectedConditions
+                .visibilityOfElementLocated(By.xpath("//div[contains(text(),'Carpentry')]")));
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", carpentryCategory);
+
+            // Now wait for it to be clickable
+            wait.until(ExpectedConditions.elementToBeClickable(carpentryCategory)).click();
+
+            System.out.println("✅ Carpentry category clicked.");
+        } catch (Exception e) {
+            System.out.println("❌ Failed to click Carpentry category: " + e.getMessage());
+            throw e;
+        }
     }
 
-    // Step 4: Click Plumbing Category
-    public void clickPlumbingCategory() {
-        WebElement plumbing = wait.until(ExpectedConditions.elementToBeClickable(plumbingCategory));
-        plumbing.click();
-        System.out.println("✅ Plumbing category clicked.");
+    public void clickFirstCarpentryService() {
+        try {
+            WebElement service = wait.until(ExpectedConditions.elementToBeClickable(firstCarpentryService));
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", service);
+            service.click();
+            System.out.println("✅ First carpentry service clicked.");
+        } catch (Exception e) {
+            System.out.println("❌ Failed to click first carpentry service: " + e.getMessage());
+            throw e;
+        }
     }
-}
 
     
+}

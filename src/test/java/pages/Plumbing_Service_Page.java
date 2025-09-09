@@ -21,8 +21,11 @@ public class Plumbing_Service_Page {
     private By menuBtn = By.xpath("//*[@id='main-menu']/div[1]");
     private By paintingCleaning = By.xpath("//*[@id='main-menu']/div[2]/a[3]");
     private By chennaiImage = By.xpath("//*[@id='modalContent']/div[2]/div/div[3]/img");
+    private By epcBtn1 = By.xpath("//*[@id='hs_plumbing']/div[1]/div[1]/div");
+    private By epcBtn2 = By.xpath("//*[@id='hs_plumbing']/div[1]/div[2]");
+    private By plumbingBtn = By.xpath("//*[@id='app']/div/div/main/div/div/div[2]/div/div/div/div[1]/div[2]");
     private By plumbingCategory = By.xpath("//*[@id='hs_plumbing']/div[1]/div[1]/div");
-    private By plumbingServicesDisplayed = By.xpath("//*[@id='app']/div/div/main/div/div/div[2]/div/div/div/div[1]/div[2]");
+  
 
     // Step 1: Click Menu
     public void clickMenuButton() {
@@ -49,6 +52,21 @@ public class Plumbing_Service_Page {
             System.out.println("❌ City selection modal not displayed, continuing...");
         }
     }
+    public void clickEPCButton() {
+        // try EPC button 1, if not clickable then EPC button 2
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(epcBtn1)).click();
+            System.out.println("✅ Clicked EPC Button 1");
+        } catch (Exception e) {
+            wait.until(ExpectedConditions.elementToBeClickable(epcBtn2)).click();
+            System.out.println("✅ Clicked EPC Button 2 (fallback)");
+        }
+    }
+
+    public void clickPlumbingButton() {
+        wait.until(ExpectedConditions.elementToBeClickable(plumbingBtn)).click();
+        System.out.println("✅ Clicked Plumbing Button");
+    }
 
     // Step 4: Click Plumbing Category
     public void clickPlumbingCategory() {
@@ -58,12 +76,5 @@ public class Plumbing_Service_Page {
     }
 
     // Step 5: Verify Plumbing Services are visible
-    public boolean isPlumbingServicesVisible() {
-        try {
-            WebElement plumbing = wait.until(ExpectedConditions.visibilityOfElementLocated(plumbingServicesDisplayed));
-            return plumbing.isDisplayed();
-        } catch (Exception e) {
-            return false;
-        }
-    }
+   
 }

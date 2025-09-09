@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="45.94" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="Plumbing Service Navigation" name="Plumber Service Book a Plumber" time="45.215">
+<testsuite name="Cucumber" time="25.593" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Plumbing Service Navigation" name="Plumber Service Book a Plumber" time="24.975">
 <system-out><![CDATA[
 Given the user logs in with a valid mobile number and OTP for booking.......passed
 And the user navigates to plumbing services page for booking................passed
-When the user clicks "Book a Plumber".......................................passed
 ]]></system-out>
 </testcase>
 </testsuite>

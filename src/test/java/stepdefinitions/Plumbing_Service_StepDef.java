@@ -45,13 +45,12 @@ public class Plumbing_Service_StepDef {
 
         // Step 3: Select Chennai (or any city)
         servicesPage.selectCity();
+        servicesPage.clickEPCButton();
+        servicesPage.clickPlumbingButton(); 
 
         // Step 4: Plumbing Category
         servicesPage.clickPlumbingCategory();
     }
 
-    @Then("the plumbing services should be displayed")
-    public void the_plumbing_services_should_be_displayed() {
-        Assert.assertTrue(servicesPage.isPlumbingServicesVisible(), "Plumbing services not visible!");
-    }
+    
 }

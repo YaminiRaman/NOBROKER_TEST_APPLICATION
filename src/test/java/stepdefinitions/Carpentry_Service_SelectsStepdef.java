@@ -6,16 +6,16 @@ import org.testng.Assert;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pages.Carpentry_ServicePage;
+import pages.Carpentry_Service_SelectPage;
 import pages.LoginPage;
 
-public class Carpentry_Service_StepDef {
+public class Carpentry_Service_SelectsStepdef {
 
     WebDriver driver = Hooks.driver;
     LoginPage loginPage;
-    Carpentry_ServicePage servicesPage;
+    Carpentry_Service_SelectPage servicesPage;
 
-    @Given("the user logs in with a valid mobile number and OTP for carpentry service")
+    @Given("the user logs and selects carpentry service")
     public void the_user_logs_in_with_a_valid_mobile_number_and_otp_for_carpentry_service() {
         loginPage = new LoginPage(driver, Hooks.extTest);
 
@@ -30,16 +30,23 @@ public class Carpentry_Service_StepDef {
         System.out.println("✅ User logged in successfully");
     }
 
-    @When("the user navigates to carpentry services")
+    @When("the user navigates to  the carpentry services")
     public void the_user_navigates_to_carpentry_services() {
-        servicesPage = new Carpentry_ServicePage(driver);
+        servicesPage = new Carpentry_Service_SelectPage(driver);
 
         servicesPage.clickMenuButton();
         servicesPage.clickPaintingCleaning();
         servicesPage.selectCity();
         servicesPage.clickEPCButton();
         servicesPage.clickCarpentryCategory();
+        servicesPage.clickFirstCarpentryService();
     }
+    @Then("the user selects the first carpentry service")
+    public void the_user_selects_the_first_carpentry_service() {
+        servicesPage.clickFirstCarpentryService();
+        System.out.println("✅ User selected the first carpentry service.");
+    }
+
 
 
 }
