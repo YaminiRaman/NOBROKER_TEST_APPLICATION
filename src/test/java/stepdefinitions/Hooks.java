@@ -16,7 +16,7 @@ public class Hooks extends Base {
 	
 	static ExtentSparkReporter spark;
 	static ExtentReports extReports;
-	static ExtentTest extTest;
+	public static ExtentTest extTest;
 	
 	LoginPage loginPage;
 	

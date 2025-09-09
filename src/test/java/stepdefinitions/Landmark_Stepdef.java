@@ -17,7 +17,7 @@ import io.cucumber.java.en.When;
 import pages.LandmarkPage;
 
 
-public class LandMark_StepDef {
+public class Landmark_Stepdef {
 	
 	WebDriver driver = Hooks.driver;
 	ExtentTest extTest = Hooks.extTest;
