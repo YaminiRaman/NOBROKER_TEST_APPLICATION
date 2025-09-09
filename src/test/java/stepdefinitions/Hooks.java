@@ -42,7 +42,7 @@ public class Hooks extends Base {
 	public void loginBeforeHome(Scenario scenario) {
 		loginPage = new LoginPage(driver, extTest);
 		loginPage.clickLogin();
-		loginPage.enterMobileNumber("7812886595");  
+		loginPage.enterMobileNumber("8015888674");  
 		loginPage.enterOtpManually(driver); 
 		loginPage.clickContinue();
 	}

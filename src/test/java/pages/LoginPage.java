@@ -40,7 +40,12 @@ public class LoginPage {
 
     public void enterMobileNumber(String mobile) {
         try {
-            driver.findElement(Locators.inputNumber).sendKeys(mobile);
+            WebElement mobileField = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(Locators.inputNumber)
+            );
+            mobileField.clear();
+            mobileField.sendKeys(mobile);
+
             extTest.log(Status.PASS, "Entered mobile number: " + mobile);
         }
         catch (Exception e) {
@@ -48,6 +53,7 @@ public class LoginPage {
             throw e;
         }
     }
+
 
     public void clickContinue() {
         try {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="27.002" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="Explore Plumbing Service Options" name="User views and expands multiple plumbing service categories" time="26.524">
+<testsuite name="Cucumber" time="33.387" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Explore Plumbing Service Options" name="User views and expands multiple plumbing service categories" time="32.632">
 <system-out><![CDATA[
 Given the user logs in successfully with valid credentials..................passed
 And the user navigates to the plumbing services section.....................passed
