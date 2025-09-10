@@ -1,47 +1,51 @@
 package pages;
 
-import java.time.Duration;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 public class Plumbing_Service_Page {
 
     WebDriver driver;
     WebDriverWait wait;
+    JavascriptExecutor js;
 
     public Plumbing_Service_Page(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        this.js = (JavascriptExecutor) driver;
     }
 
-    // Locators
-    private By menuBtn = By.xpath("//*[@id='main-menu']/div[1]");
-    private By paintingCleaning = By.xpath("//*[@id='main-menu']/div[2]/a[3]");
+    // ---------------- LOCATORS ----------------
+    By menuButton = By.xpath("//*[@id='main-menu']/div[1]");
+    By paintingCleaning = By.xpath("//*[@id='main-menu']/div[2]/a[3]");
     private By chennaiImage = By.xpath("//*[@id='modalContent']/div[2]/div/div[3]/img");
-    private By epcBtn1 = By.xpath("//*[@id='hs_plumbing']/div[1]/div[1]/div");
-    private By epcBtn2 = By.xpath("//*[@id='hs_plumbing']/div[1]/div[2]");
-    private By plumbingBtn = By.xpath("//*[@id='app']/div/div/main/div/div/div[2]/div/div/div/div[1]/div[2]");
-    private By plumbingCategory = By.xpath("//*[@id='hs_plumbing']/div[1]/div[1]/div");
-  
+    By epcButton = By.xpath("//*[@id='hs_plumbing']/div[1]/div[1]/div");
+    By plumbingButton = By.xpath("//*[@id='app']/div/div/main/div/div/div[2]/div/div/div/div[1]/div[2]");
+    By plumbingCategory = By.xpath("//*[@id='hs_plumbing']/div[1]/div[1]/div");
+    By bookPlumberButton = By.xpath("//*[@id='hs_plumbing']/div[1]/div[1]/div");
+    By showMoreButton = By.xpath("//*[@id=\"PLUMBING_OTHER_SOMETHING_ELSE\"]/div[3]/div/div");
 
-    // Step 1: Click Menu
+  
+    By overlay = By.cssSelector(".bg-fade-in");
+
+    // ---------------- ACTIONS ----------------
     public void clickMenuButton() {
-        WebElement menu = wait.until(ExpectedConditions.elementToBeClickable(menuBtn));
-        menu.click();
+        WebElement menu = wait.until(ExpectedConditions.elementToBeClickable(menuButton));
+        js.executeScript("arguments[0].click();", menu);
         System.out.println("✅ Menu button clicked.");
     }
 
-    // Step 2: Click Painting & Cleaning
     public void clickPaintingCleaning() {
-        WebElement painting = wait.until(ExpectedConditions.elementToBeClickable(paintingCleaning));
-        painting.click();
+        WebElement pc = wait.until(ExpectedConditions.elementToBeClickable(paintingCleaning));
+        js.executeScript("arguments[0].click();", pc);
         System.out.println("✅ Painting & Cleaning clicked.");
     }
-
-    // Step 3: Select City from Modal
     public void selectCity() {
         try {
             WebDriverWait modalWait = new WebDriverWait(driver, Duration.ofSeconds(25));
@@ -52,29 +56,43 @@ public class Plumbing_Service_Page {
             System.out.println("❌ City selection modal not displayed, continuing...");
         }
     }
+
     public void clickEPCButton() {
-        // try EPC button 1, if not clickable then EPC button 2
-        try {
-            wait.until(ExpectedConditions.elementToBeClickable(epcBtn1)).click();
-            System.out.println("✅ Clicked EPC Button 1");
-        } catch (Exception e) {
-            wait.until(ExpectedConditions.elementToBeClickable(epcBtn2)).click();
-            System.out.println("✅ Clicked EPC Button 2 (fallback)");
-        }
+        WebElement epc = wait.until(ExpectedConditions.elementToBeClickable(epcButton));
+        js.executeScript("arguments[0].click();", epc);
+        System.out.println("✅ EPC button clicked.");
     }
 
     public void clickPlumbingButton() {
-        wait.until(ExpectedConditions.elementToBeClickable(plumbingBtn)).click();
-        System.out.println("✅ Clicked Plumbing Button");
+        WebElement plumbing = wait.until(ExpectedConditions.elementToBeClickable(plumbingButton));
+        js.executeScript("arguments[0].click();", plumbing);
+        System.out.println("✅ Plumbing button clicked.");
     }
 
-    // Step 4: Click Plumbing Category
     public void clickPlumbingCategory() {
-        WebElement plumbing = wait.until(ExpectedConditions.elementToBeClickable(plumbingCategory));
-        plumbing.click();
+        // Wait for overlay to disappear if exists
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(overlay));
+        WebElement category = wait.until(ExpectedConditions.elementToBeClickable(plumbingCategory));
+        js.executeScript("arguments[0].click();", category);
         System.out.println("✅ Plumbing category clicked.");
     }
 
-    // Step 5: Verify Plumbing Services are visible
+    public void clickBookPlumber() {
+        WebElement bookBtn = wait.until(ExpectedConditions.elementToBeClickable(bookPlumberButton));
+        js.executeScript("arguments[0].scrollIntoView(true);", bookBtn);
+        js.executeScript("arguments[0].click();", bookBtn);
+        System.out.println("✅ Book a Plumber clicked.");
+    }
+   
+    public void clickShowMore() {
+        WebElement showMore = wait.until(ExpectedConditions.elementToBeClickable(showMoreButton));
+        js.executeScript("arguments[0].scrollIntoView(true);", showMore);
+        js.executeScript("arguments[0].click();", showMore);
+        System.out.println("✅ Show More clicked.");
+    }
+
+
+
+
    
 }

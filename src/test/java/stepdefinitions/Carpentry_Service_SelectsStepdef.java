@@ -15,7 +15,7 @@ public class Carpentry_Service_SelectsStepdef {
     LoginPage loginPage;
     Carpentry_Service_SelectPage servicesPage;
 
-    @Given("the user logs and selects carpentry service")
+    @Given("  the user logs in with a valid mobile number and OTP for carpentry service ")
     public void the_user_logs_in_with_a_valid_mobile_number_and_otp_for_carpentry_service() {
         loginPage = new LoginPage(driver, Hooks.extTest);
 
@@ -29,8 +29,10 @@ public class Carpentry_Service_SelectsStepdef {
         Assert.assertTrue(loginPage.loginsuccessful(), "Login failed!");
         System.out.println("✅ User logged in successfully");
     }
+    
+    
 
-    @When("the user navigates to  the carpentry services")
+    @When("the user navigates to carpentry services")
     public void the_user_navigates_to_carpentry_services() {
         servicesPage = new Carpentry_Service_SelectPage(driver);
 
@@ -39,13 +41,16 @@ public class Carpentry_Service_SelectsStepdef {
         servicesPage.selectCity();
         servicesPage.clickEPCButton();
         servicesPage.clickCarpentryCategory();
-        servicesPage.clickFirstCarpentryService();
+        // 👇 Do NOT click the first service here
+        System.out.println("✅ User navigated to carpentry category.");
     }
+
     @Then("the user selects the first carpentry service")
     public void the_user_selects_the_first_carpentry_service() {
         servicesPage.clickFirstCarpentryService();
         System.out.println("✅ User selected the first carpentry service.");
     }
+
 
 
 
