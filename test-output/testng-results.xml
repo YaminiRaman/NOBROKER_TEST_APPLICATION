@@ -1,94 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-10T16:58:58 IST" name="Default suite" finished-at="2025-09-10T17:00:22 IST" duration-ms="83957">
+  <suite started-at="2025-09-10T19:26:10 IST" name="Default suite" finished-at="2025-09-10T19:27:37 IST" duration-ms="87924">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner_Landmark@3d34d211]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner_SalesAgreement@3d34d211]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-09-10T16:58:58 IST" name="Default test" finished-at="2025-09-10T17:00:22 IST" duration-ms="83957">
-      <class name="runner.TestRunner_Landmark">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.TestRunner_Landmark@3d34d211]" started-at="2025-09-10T16:58:58 IST" name="setUpClass" finished-at="2025-09-10T16:58:59 IST" duration-ms="902" status="PASS">
+    <test started-at="2025-09-10T19:26:10 IST" name="Default test" finished-at="2025-09-10T19:27:37 IST" duration-ms="87924">
+      <class name="runner.TestRunner_SalesAgreement">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.TestRunner_SalesAgreement@3d34d211]" started-at="2025-09-10T19:26:10 IST" name="setUpClass" finished-at="2025-09-10T19:26:10 IST" duration-ms="850" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@20801cbb]]>
+                <![CDATA[org.testng.TestRunner@113ee1ce]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner_Landmark@3d34d211]" started-at="2025-09-10T16:58:59 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-09-10T16:59:25 IST" duration-ms="25974" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner_SalesAgreement@3d34d211]" started-at="2025-09-10T19:26:10 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-09-10T19:26:52 IST" duration-ms="41519" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Mismatch location–landmark combination"]]>
+                <![CDATA["Sales Agreement after login"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Home Page Search and Navigation"]]>
+                <![CDATA["Sales agreement Purchase"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner_Landmark@3d34d211]" started-at="2025-09-10T16:59:25 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-09-10T16:59:49 IST" duration-ms="24505" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner_SalesAgreement@3d34d211]" started-at="2025-09-10T19:26:52 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-09-10T19:27:37 IST" duration-ms="45167" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Missing landmark"]]>
+                <![CDATA["Sales Agreement Payment Cancel"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Home Page Search and Navigation"]]>
+                <![CDATA["Sales agreement Purchase"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner_Landmark@3d34d211]" started-at="2025-09-10T16:59:49 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-09-10T17:00:22 IST" duration-ms="32162" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["View previous searches after new search"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Home Page Search and Navigation"]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1578)
-at org.testng.Assert.assertTrue(Assert.java:57)
-at org.testng.Assert.assertTrue(Assert.java:67)
-at stepdefinitions.Landmark_Stepdef.the_previous_search_should_appear_in_search_history(Landmark_Stepdef.java:64)
-at ✽.the previous search "Chennai" "Velachery" should appear in search history(file:///C:/Users/yamin/git/NOBROKER_TEST_APPLICATION/NOBROKER_TEST_APPLICATION/src/test/resources/features/landmark.feature:33)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestRunner_Landmark@3d34d211]" started-at="2025-09-10T17:00:22 IST" name="tearDownClass" finished-at="2025-09-10T17:00:22 IST" duration-ms="352" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestRunner_SalesAgreement@3d34d211]" started-at="2025-09-10T19:27:37 IST" name="tearDownClass" finished-at="2025-09-10T19:27:37 IST" duration-ms="330" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- runner.TestRunner_Landmark -->
+      </class> <!-- runner.TestRunner_SalesAgreement -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
