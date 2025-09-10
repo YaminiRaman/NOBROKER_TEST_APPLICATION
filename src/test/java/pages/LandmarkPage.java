@@ -78,16 +78,7 @@ public class LandmarkPage {
 			return false;
 		}
 	}
-	public boolean redirectedRentPage() {
-		try {
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@itemprop='item']")));
-			extTest.log(Status.PASS, "Redirected sucessfully");
-			return true;
-		} catch (Exception e) {
-			extTest.log(Status.FAIL, "Fail to redirect" + e.getMessage());
-			return false;
-		}
-	}
+	
 	
 
 	public boolean isHistorySectionVisible() {

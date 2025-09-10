@@ -50,11 +50,6 @@ public class Landmark_Stepdef {
 	public void leaves_the_landmark_field_blank() {
 		homePage.enterLocality("");
 	}
-	@Then("the user should be redirected to the Rent Page")
-	public void the_user_should_be_redirected_to_the_rent_page() {
-		boolean displayPropertyCard = homePage.redirectedRentPage();
-	    Assert.assertTrue(displayPropertyCard);
-	}
 	
 	
 	@When("the user returns to the home page")

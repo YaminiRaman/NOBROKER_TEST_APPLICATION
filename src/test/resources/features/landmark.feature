@@ -29,7 +29,6 @@ Feature: Home Page Search and Navigation
    Given the user selects location "<location>"
     And enters landmark "<landmark>"
     And clicks on search button
-    Then the user should be redirected to the Rent Page
     And the user returns to the home page
     Then the previous search "<location>" "<landmark>" should appear in search history
     

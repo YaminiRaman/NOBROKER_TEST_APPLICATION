@@ -77,8 +77,8 @@ public class Login_StepDef {
 	// scenario--4
 	@Then("the user should be logged in successfully")
 	public void the_user_should_be_logged_in_successfully() {
-		boolean actualError = loginPage.loginsuccessful();
-        Assert.assertTrue(actualError);
+	    boolean isLoginSuccessful = loginPage.loginsuccessful();
+	    Assert.assertTrue(isLoginSuccessful, "Login was not successful!");
 	}
 	
 }

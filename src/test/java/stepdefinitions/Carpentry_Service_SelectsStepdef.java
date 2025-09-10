@@ -15,8 +15,8 @@ public class Carpentry_Service_SelectsStepdef {
     LoginPage loginPage;
     Carpentry_Service_SelectPage servicesPage;
 
-    @Given("  the user logs in with a valid mobile number and OTP for carpentry service ")
-    public void the_user_logs_in_with_a_valid_mobile_number_and_otp_for_carpentry_service() {
+    @Given("the user logs in with a valid mobile number and OTP for carpentry ")
+    public void the_user_logs_in_with_a_valid_mobile_number_and_otp() {
         loginPage = new LoginPage(driver, Hooks.extTest);
 
         loginPage.clickLogin();
