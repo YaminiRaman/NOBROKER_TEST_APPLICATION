@@ -14,6 +14,7 @@ public class PaintingPage {
     By chennaiImage = By.xpath("//*[@id=\"modalContent\"]/div[2]/div/div[3]/img");
     By painting = By.xpath("//*[@id=\"hs_painting\"]/div[1]/div[1]/div");
     By waterproofing = By.xpath("//*[@id=\"WATER_PROOFING\"]/div[1]/div[1]/div");
+    By seeAllBtn = By.xpath("//*[@id=\"app\"]/div/div/div[2]/div[2]/span/div/div/div[2]/button");
 
     public PaintingPage(WebDriver driver) {
         this.driver = driver;
@@ -51,5 +52,9 @@ public class PaintingPage {
 
     public void selectWaterproofing() {
         wait.until(ExpectedConditions.elementToBeClickable(waterproofing)).click();
+    }
+    public void clickSeeAllProjects() {
+        wait.until(ExpectedConditions.elementToBeClickable(seeAllBtn)).click();
+        System.out.println("✅ Clicked on See All Recent Projects button");
     }
 }

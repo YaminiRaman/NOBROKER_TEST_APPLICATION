@@ -43,6 +43,10 @@ public class PaintingStepDef {
         Assert.assertTrue(driver.getCurrentUrl().contains("painting"),
                 "Painting page not loaded correctly!");
     }
+    @When("the user clicks on See All in recent projects")
+    public void the_user_clicks_on_see_all_in_recent_projects() {
+        paintingPage.clickSeeAllProjects();
+    }
 
    
 

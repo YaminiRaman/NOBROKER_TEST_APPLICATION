@@ -2,6 +2,7 @@ package stepdefinitions;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 import io.cucumber.java.After;
@@ -45,6 +46,14 @@ public class Hooks extends Base {
 		loginPage.enterMobileNumber("8015888674");  
 		loginPage.enterOtpManually(driver); 
 		loginPage.clickContinue();
+	}
+	@After
+	public void tearDown(Scenario scenario) {
+	    if (scenario.isFailed()) {
+	        extTest.log(Status.FAIL, "Scenario failed: " + scenario.getName());
+	    } else {
+	        extTest.log(Status.PASS, "Scenario passed: " + scenario.getName());
+	    }
 	}
 
 	@After
