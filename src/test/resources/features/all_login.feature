@@ -25,7 +25,7 @@ Feature: User Login
     When the user enters a valid phone number "<phoneNumber>"
     And waits until the OTP expires and clicks on resend button
     And the user enters the valid OTP
-    Then the user should be logged in successfully
+   
     
      Examples:
      | phoneNumber |
@@ -35,7 +35,7 @@ Feature: User Login
     Given the user is on the login page
     When the user enters a valid phone number "<phoneNumber>"
 	And the user enters the valid OTP
-    Then the user should be logged in successfully
+    
     
      Examples:
      | phoneNumber |

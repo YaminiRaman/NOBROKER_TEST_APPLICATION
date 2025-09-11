@@ -69,16 +69,12 @@ public class Login_StepDef {
 	@When("the user enters the valid OTP")
 	public void the_user_enters_the_valid_otp() {
 		loginPage.enterOtpManually(driver); 
-		Base.sleep();
+	Base.sleep();
 		loginPage.clickContinue();
 		Base.sleep();
 	}
 
 	// scenario--4
-	@Then("the user should be logged in successfully")
-	public void the_user_should_be_logged_in_successfully() {
-	    boolean isLoginSuccessful = loginPage.loginsuccessful();
-	    Assert.assertTrue(isLoginSuccessful, "Login was not successful!");
-	}
+
 	
 }

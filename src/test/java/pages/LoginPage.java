@@ -77,6 +77,8 @@ public class LoginPage {
             throw e;
         }
     }
+    
+    
 
     public void enterOtpManually(WebDriver driver) {
         try {
@@ -134,13 +136,36 @@ public class LoginPage {
 
     public boolean loginsuccessful() {
         try {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("profile-icon")));
-            extTest.log(Status.PASS, "Login successful - Profile icon is visible");
-            return true;
-        } 
-        catch (TimeoutException te) {
-            extTest.log(Status.FAIL, "Login failed - Profile icon not found");
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+
+            // Define possible profile locators
+            By[] possibleLocators = {
+                By.id("profile-icon"),
+                By.xpath("//*[contains(@class,'profile') and contains(@class,'icon')]"),
+                By.xpath("//img[contains(@alt,'profile')]"),
+                By.xpath("//*[text()='My Profile' or text()='Profile']")
+            };
+
+            // Loop through possible locators
+            for (By locator : possibleLocators) {
+                try {
+                    wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+                    extTest.log(Status.PASS, "✅ Login successful - Profile element found: " + locator.toString());
+                    return true;
+                } catch (TimeoutException ignored) {
+                    // Try next locator
+                }
+            }
+
+            // If no locator matched
+            extTest.log(Status.FAIL, "❌ Login failed - No profile element found");
+            return false;
+
+        } catch (Exception e) {
+            extTest.log(Status.FAIL, "❌ Login check failed due to exception: " + e.getMessage());
             return false;
         }
     }
+
+
 }

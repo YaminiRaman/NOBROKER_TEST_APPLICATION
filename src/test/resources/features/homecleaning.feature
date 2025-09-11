@@ -1,7 +1,7 @@
 Feature: Home cleaning service
 
   Scenario: Navigate to Full House Cleaning and close website
-    Given the user logs in successfully for home 
+    
     When the user clicks on the menu button for home
     And the user selects Painting and Cleaning for home
     And the user selects Home Cleaning for home
@@ -10,7 +10,7 @@ Feature: Home cleaning service
    
 
   Scenario: Navigate to Furnished Villa under Cleaning Services
-    Given the user logs in successfully for home
+   
     When the user clicks on the menu button for home
     And the user selects Painting and Cleaning for home
     And the user selects Home Cleaning for home

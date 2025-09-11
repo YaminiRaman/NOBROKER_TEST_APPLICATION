@@ -4,6 +4,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -59,26 +60,19 @@ public class LandmarkPage {
 	}
 
 	public void clickSearchButton() {
-		try {
-			driver.findElement(Locators.searchButton).click();
-
-			extTest.log(Status.PASS, "Search button clicked successfully");
-		} catch (Exception e) {
-			extTest.log(Status.FAIL, "Failed to click search button: " + e.getMessage());
-		}
+	    try {
+	        WebElement searchBtn = wait.until(ExpectedConditions.elementToBeClickable(Locators.searchButton));
+	        searchBtn.click();
+	        extTest.log(Status.PASS, "Search button clicked successfully");
+	    } catch (Exception e) {
+	        extTest.log(Status.FAIL, "Failed to click search button: " + e.getMessage());
+	    }
 	}
 
-	public boolean isLocalityErrorDisplayed() {
-		try {
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("alertMessageBox")));
-			extTest.log(Status.PASS, "Alert message displayed");
-			return true;
-		} catch (Exception e) {
-			extTest.log(Status.FAIL, "Error message not displayed: " + e.getMessage());
-			return false;
-		}
-	}
+
 	
+
+
 	
 
 	public boolean isHistorySectionVisible() {
@@ -90,14 +84,8 @@ public class LandmarkPage {
 		}
 	}
 
-	public boolean getVisibleHistoryItemsText(String location, String locality) {
-		try {
-			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//span[text()='" + locality + ", " + location + "']")));
-			return true;
-		} catch (Exception e) {
-			return false;
-		}
-	}
+	
+
 
 
 	

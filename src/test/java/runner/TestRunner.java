@@ -4,11 +4,11 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
-	features="src\\test\\resources\\features\\login.feature",
+	features="src\\test\\resources\\features",
 	glue="stepdefinitions",
 	plugin= {"pretty","html:reports/cucumber-html-report.html"}
 )
 
-public class TestRunner_Login extends AbstractTestNGCucumberTests {
+public class TestRunner extends AbstractTestNGCucumberTests {
 	
 }
