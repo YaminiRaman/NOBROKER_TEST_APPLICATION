@@ -1,9 +1,18 @@
 package stepdefinitions;
 
+import java.io.File;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.google.common.io.Files;
 
 import io.cucumber.java.After;
 import io.cucumber.java.AfterAll;
@@ -61,4 +70,5 @@ public class Hooks extends Base {
 		Base.sleep();
 		driver.quit();
 	}
+	
 }

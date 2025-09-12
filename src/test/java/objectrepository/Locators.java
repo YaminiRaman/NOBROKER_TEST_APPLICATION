@@ -19,6 +19,13 @@ public class Locators {
 	public static By historySection = By.cssSelector("div.QuickBook_autoSearchPopover__g1zGj"); 
 	public static By historyItems   = By.cssSelector("div.QuickBook_autoSearchPopover__g1zGj div");
 	
-	public static final By touchProfile= By.xpath("//*[@id=\"profile-icon\"]/div");
-    public static final By signOutBtn= By.xpath("//*[@id=\"profile-menu-dropdown\"]/div[6]");
+	// login page locator
+   
+    //Blog Page Locators
+    public By blogsButton = By.xpath("//*[@id=\"main-menu\"]/div[2]/a[13]");
+    public By blogMenu = By.xpath("//*[@id=\"hamburger\"]");
+    public By interiorsOption = By.xpath("//*[@id='dropdownContent']/div[2]/div[5]/div[2]");
+    public By dropdown = By.xpath("//*[@id='dropdownContent']/div[2]/div[5]/div[1]/div");
+    public By renovationOption = By.xpath("//*[@id='dropdownContent']/div[2]/div[5]/div[2]/a[1]");
+    public By renovationHeader = By.xpath("/html/body/main/section[2]/h2");
 }

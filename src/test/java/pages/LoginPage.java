@@ -167,5 +167,10 @@ public class LoginPage {
         }
     }
 
+	public void clickMenu() {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }
