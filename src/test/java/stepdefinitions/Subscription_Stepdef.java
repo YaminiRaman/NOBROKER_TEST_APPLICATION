@@ -1,5 +1,11 @@
 package stepdefinitions;
 
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
@@ -34,7 +40,18 @@ public class Subscription_Stepdef extends Base {
     public void the_user_navigates_to_tenant_plans_and_selects_freedom_plan() {
         tenantPlansPage.clickMenu();
         tenantPlansPage.clickTenantPlans();
+
+        // ✅ Assert Subscribe button is visible before clicking
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        WebElement subscribeBtn = wait.until(
+            ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='payPlanType']"))
+        );
+
+        Assert.assertTrue(subscribeBtn.isDisplayed(), "❌ Freedom Plan Subscribe button not visible!");
+        System.out.println("✅ Freedom Plan Subscribe button is visible");
+
         tenantPlansPage.clickFreedomPlanSubscribe();
         System.out.println("✅ Freedom Plan Subscribe button clicked");
     }
+
 }

@@ -25,17 +25,20 @@ public class Renovation_StepDef {
     public void the_user_navigates_through_home_renovation_services() {
         renovationPage = new RenovationPage(driver);
 
-        renovationPage.clickMenuButton();
-        renovationPage.clickPaintingAndCleaning();
-        renovationPage.selectCity(); // optional if city selection pops up
-        renovationPage.clickInteriorAndRenovation();
-        renovationPage.clickHomeRenovation();
-        
-      
-       
-        
+        try {
+            renovationPage.clickMenuButton();
+            renovationPage.clickPaintingAndCleaning();
+            renovationPage.selectCity(); // optional if city selection pops up
+            renovationPage.clickInteriorAndRenovation();
+            
+            // Click Home Renovation and assert success
+            renovationPage.clickHomeRenovation();
+            System.out.println("✅ Home Renovation section clicked successfully.");
+        } catch (Exception e) {
+            Assert.fail("❌ Failed to navigate to Home Renovation section: " + e.getMessage());
+        }
     }
-    
+
     
 
   

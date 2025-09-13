@@ -45,21 +45,31 @@ public class Salesagreement_Stepdef {
 
     @When("the user clicks on Pay button")
     public void the_user_clicks_on_pay_button() {
-        salesPage.clickPay();
+        boolean payClicked = salesPage.clickPay();
+        Assert.assertTrue(payClicked, "❌ Pay button was not clicked successfully!");
+        System.out.println("✅ Pay button clicked successfully");
     }
 
     @When("the user clicks on Back button")
     public void the_user_clicks_on_back_button() {
-        salesPage.clickBack();
+        boolean backClicked = salesPage.clickBack();
+        Assert.assertTrue(backClicked, "❌ Back button was not clicked successfully!");
+        System.out.println("✅ Back button clicked successfully");
     }
 
     @Then("the user confirms cancel payment")
     public void the_user_confirms_cancel_payment() {
-        salesPage.confirmCancel();
+        boolean cancelConfirmed = salesPage.confirmCancel();
+        Assert.assertTrue(cancelConfirmed, "❌ Cancel payment was not confirmed!");
+        System.out.println("✅ Cancel payment confirmed successfully");
     }
 
     @Then("the browser is closed")
     public void the_browser_is_closed() {
         salesPage.closeBrowser();
+        // Optional: simple assert to check driver is null or closed
+        // This can be tricky; usually we just ensure no exception occurs
+        System.out.println("✅ Browser closed successfully");
     }
+
 }

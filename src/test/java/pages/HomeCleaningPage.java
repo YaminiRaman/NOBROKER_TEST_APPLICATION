@@ -13,12 +13,12 @@ public class HomeCleaningPage {
     WebDriver driver;
 
     // Locators
-    By menuBtn = By.xpath("//*[@id=\"main-menu\"]/div[1]");
-    By paintingCleaning = By.xpath("//*[@id=\"main-menu\"]/div[2]/a[3]");
-    By chennaiImage = By.xpath("//*[@id=\"modalContent\"]/div[2]/div/div[3]/img");
-    By homeCleaning = By.xpath("//*[@id=\"hs_cleaning\"]/div[1]/div[1]/div");
-    By fullHouseCleaning = By.xpath("//*[@id=\"app\"]/div/div/main/div/div/div[2]/div/div/div/div[1]/div[2]");
-    By furnishedVilla = By.xpath("//*[@id='hs_bathroom_cleaning']/div[1]/div[1]/div");
+   public  By menuBtn = By.xpath("//*[@id=\"main-menu\"]/div[1]");
+   public By paintingCleaning = By.xpath("//*[@id=\"main-menu\"]/div[2]/a[3]");
+   public By chennaiImage = By.xpath("//*[@id=\"modalContent\"]/div[2]/div/div[3]/img");
+   public By homeCleaning = By.xpath("//*[@id=\"hs_cleaning\"]/div[1]/div[1]/div");
+   public By fullHouseCleaning = By.xpath("//*[@id=\"app\"]/div/div/main/div/div/div[2]/div/div/div/div[1]/div[2]");
+   public By furnishedVilla = By.xpath("//*[@id=\"hs_bathroom_cleaning\"]/div[1]/div[1]/div");
    
 
     // Constructor

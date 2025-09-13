@@ -7,6 +7,7 @@ import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import pages.Blog_Page;
 import pages.LoginPage;
+import org.testng.Assert;
 
 
 public class Blog_StepDef {
@@ -17,11 +18,15 @@ public class Blog_StepDef {
 
   
 
+  
+
     @When("the user navigates to Interiors -> Renovation")
     public void the_user_navigates_to_interiors_renovation() {
         blogPage = new Blog_Page(driver);
         blogPage.navigateToRenovationBlogs();
         System.out.println("✅ Navigated to Interiors -> Renovation");
+
+    
     }
 
    

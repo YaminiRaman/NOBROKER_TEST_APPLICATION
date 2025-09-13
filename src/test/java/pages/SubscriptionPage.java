@@ -17,7 +17,7 @@ public class SubscriptionPage {
     private By menuBtn = By.xpath("//*[@id='main-menu']/div[1]/img");         // Menu button
     private By tenantPlansLink = By.xpath("//*[@id='main-menu']/div[2]/a[7]"); // Tenant Plans link
     private By freedomPlanSubscribeBtn = By.xpath("//*[@id='payPlanType']");   // Subscribe button
-    private By freedomPlanDetails = By.xpath("//div[contains(text(),'Freedom Plan')]");
+    
 
     public SubscriptionPage(WebDriver driver) {
         this.driver = driver;
@@ -44,6 +44,8 @@ public class SubscriptionPage {
         wait.until(ExpectedConditions.visibilityOf(subscribeBtn));
         wait.until(ExpectedConditions.elementToBeClickable(subscribeBtn)).click();
     }
+ 
+
 
    
 }

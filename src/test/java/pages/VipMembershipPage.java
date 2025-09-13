@@ -10,12 +10,11 @@ public class VipMembershipPage {
     WebDriverWait wait;
 
     // ✅ Locators
-    By menuBtn = By.xpath("//*[@id=\"main-menu\"]/div[1]");
-    By paintingCleaning = By.xpath("//*[@id=\"main-menu\"]/div[2]/a[3]");
-    By chennaiImage = By.xpath("//*[@id=\"modalContent\"]/div[2]/div/div[3]/img");
-    By vipPlans = By.xpath("//*[@id=\"0\"]/div/div/div/button");
-    By giftVoucher = By.xpath("/html/body/div[1]/div/header/nav/div[1]/ul/li[4]");
-    By exploreOffer = By.xpath("//*[@id=\"web-gv\"]/div[5]/button");
+   public By menuBtn = By.xpath("//*[@id=\"main-menu\"]/div[1]");
+   public By paintingCleaning = By.xpath("//*[@id=\"main-menu\"]/div[2]/a[3]");
+   public By chennaiImage = By.xpath("//*[@id=\"modalContent\"]/div[2]/div/div[3]/img");
+   public By vipPlans = By.xpath("//*[@id=\"0\"]/div/div/div/button");
+  
 
     public VipMembershipPage(WebDriver driver) {
         this.driver = driver;
@@ -45,20 +44,13 @@ public class VipMembershipPage {
     }
 
     public void viewVipPlans() {
-        wait.until(ExpectedConditions.elementToBeClickable(vipPlans)).click();
+        WebElement planBtn = wait.until(
+            ExpectedConditions.visibilityOfElementLocated(vipPlans)
+        );
+        planBtn.click();
         System.out.println("✅ Viewed VIP Plans");
     }
 
-    public void clickGiftVoucher() {
-        WebElement giftBtn = wait.until(ExpectedConditions.presenceOfElementLocated(giftVoucher));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", giftBtn);
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", giftBtn);
-        System.out.println("✅ Clicked Gift Voucher via JS");
-    }
-    public void clickExploreOffer() {
-        WebElement exploreBtn = wait.until(ExpectedConditions.presenceOfElementLocated(exploreOffer));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", exploreBtn);
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", exploreBtn);
-        System.out.println("✅ Clicked Explore Offer via JS");
-    }
+    
+    
 }

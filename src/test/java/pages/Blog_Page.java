@@ -66,5 +66,13 @@ public class Blog_Page {
         renovation.click();
         System.out.println("✅ Renovation option clicked");
     }
+    public boolean isRenovationHeaderDisplayed() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement header = wait.until(
+            ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[contains(text(),'Renovation')]"))
+        );
+        return header.isDisplayed();
+    }
+
     
 }

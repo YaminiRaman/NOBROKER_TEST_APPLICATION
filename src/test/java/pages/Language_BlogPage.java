@@ -9,7 +9,7 @@ import java.time.Duration;
 
 public class Language_BlogPage {
 
-    WebDriver driver;
+    public WebDriver driver;
     WebDriverWait wait;
 
     public Language_BlogPage(WebDriver driver) {
@@ -18,9 +18,9 @@ public class Language_BlogPage {
     }
 
     // Locators
-    private By menuButton = By.xpath("//*[@id='main-menu']/div[1]");
-    private By blogsButton = By.xpath("//*[@id='main-menu']/div[2]/a[13]");
-    private By listButton = By.xpath("//*[@id='hamburger']");
+    public By menuButton = By.xpath("//*[@id='main-menu']/div[1]");
+    public By blogsButton = By.xpath("//*[@id='main-menu']/div[2]/a[13]");
+    public By listButton = By.xpath("//*[@id='hamburger']");
     private By languageDropdown = By.xpath("//*[@id=\"dropdownContent\"]/div[2]/div[11]/div[1]/div");
     private By hindiOption = By.xpath("//*[@id=\"dropdownContent\"]/div[2]/div[11]/div[2]/a[1]");
 

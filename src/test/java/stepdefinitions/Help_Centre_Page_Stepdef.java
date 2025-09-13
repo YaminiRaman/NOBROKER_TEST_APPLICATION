@@ -14,6 +14,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class Help_Centre_Page_Stepdef {
 
@@ -33,7 +34,8 @@ public class Help_Centre_Page_Stepdef {
         WebElement helpCenterBtn = wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//*[@id='app']/div/div/div[1]/button")
         ));
-        
+        Assert.assertTrue(helpCenterBtn.isDisplayed(), "❌ Help Center button not visible after click!");
+        System.out.println("✅ Help Center button clicked successfully");
         helpCenterBtn.click();
         Base.sleep();
     }
@@ -47,7 +49,8 @@ public class Help_Centre_Page_Stepdef {
         WebElement serviceOption = wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//*[@id='app']/div/div/div[1]/div/div[1]/div[3]/div[2]/div/div[4]")
         ));
-
+        Assert.assertTrue(serviceOption.isDisplayed(), "❌ Service option not visible!");
+        System.out.println("✅ Service option selected successfully");
         serviceOption.click();
         Base.sleep();
     }
@@ -60,7 +63,8 @@ public class Help_Centre_Page_Stepdef {
         WebElement issueOption = wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//*[@id='app']/div/div/div[1]/div/div[1]/div[2]/div[2]/div/div[4]/div[1]")
         ));
-
+        Assert.assertTrue(issueOption.isDisplayed(), "❌ Complaint issue option not visible!");
+        System.out.println("✅ Complaint issue selected successfully");
         issueOption.click();
         Base.sleep();
     }
@@ -73,7 +77,7 @@ public class Help_Centre_Page_Stepdef {
         WebElement closeBtn = wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//*[@id='app']/div/div/div[2]/button/img")
         ));
-
+        
         closeBtn.click();
         Base.sleep();
     }
