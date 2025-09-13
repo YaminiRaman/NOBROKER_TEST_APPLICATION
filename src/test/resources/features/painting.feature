@@ -2,7 +2,7 @@ Feature: Painting & Cleaning Services
   As a logged-in user
   I want to navigate to painting and waterproofing services
   So that I can book the required service
-
+#TS-PAINT-007
   Scenario: Navigate to Painting service
    
     When the user opens the main menu for painting
